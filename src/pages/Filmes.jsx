@@ -24,11 +24,23 @@ function Filmes() {
         <div className="listaFilmes flex flex-row gap-3">
         {
                 filmes.map(filme => (
-                    <div className="card-filme" key={filme.id}>
+                    <>
+                    {/* <div className="card-filme" key={filme.id}>
                     <img className="w-auto" src={`${urlImg}${filme.poster_path}`}/>
                     <h1>{filme.title}</h1>
                     <Link to={`${filme.id}`} className="bg-blue-500">Saber Mais</Link>
-                    </div>
+                    </div> */}
+
+                    <div class="inline-block px-3">
+          <img className='absolute w- h-full p-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+            <div
+              class="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            >
+            </div>
+            
+          </div>
+                    </>
+                    
                 )
             )
         }
