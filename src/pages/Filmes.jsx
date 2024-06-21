@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-/*import {Link} from 'react-router-dom';*/
+import {Link} from 'react-router-dom';
 
 function Filmes() {
  
@@ -22,121 +22,141 @@ function Filmes() {
       
       
         <>
-          <main className='bg-stone-700'>
-            <input type="text" name="buscar" id="busca" className="bg-stone-700 w-full h-11 p-5 text-stone-400 text-base italic" placeholder="Pesquisar por um filme, uma série televisiva"/>
-  
-                 
-                 
-                 
-                 <p className='text-white font-extrabold text-3xl pl-7'>Terror</p>
-                 
-                 <div className="listaFilmes flex flex-row overflow-x-scroll pt-5 hide-scroll-bar relative ">
-                 {
-                  filmes.map(filme => (
-                      <>
-                      <main>
-                  <div className="inline-block pl-5 pb-5">
+        <main className='bg-stone-700'>
+        <input type="text" name="buscar" id="busca" className="bg-stone-700 w-full h-11 p-5 text-stone-400 text-base italic" placeholder="Pesquisar por um filme, uma série televisiva"/>
+
+        <p className='text-white font-extrabold text-3xl pl-8 p-3'>Terror</p>
+        <div className="listaFilmes flex flex-row gap-3 overflow-x-scroll hide-scroll-bar relative"> 
+        <div className="listaFilmes flex flex-row flex-wrap  pt-5  "></div>
+            {
+                filmes.map(
+                    filme => (
+                        <div className="card-filme" key={filme.id}>
+                          
+                            <div className="inline-block pl-5 pb-5">
                     <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
                       <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
+                        <h1 className="relative font-bold text-center text-white text-sm pt-64 p-5 ">{filme.title}</h1>
+                        
                       </div>
+                      <div className="text-sm pl-20 pt-3">
+                            <Link to={`${filme.id}`} className="bg-white pr-2 pl-2 pt-1 pb-1 rounded-xl ">Saiba Mais</Link>
+                            </div>
                   </div>
-                  </main>
-                      </>
-                      
-                          )
-                      )
-                  }
-                  
+                        </div>
+            
+                    )
+                )
+            }
+           
+        </div>
+
+        <p className='text-white font-extrabold text-3xl pl-8 p-3 pt-5'>Comédia</p>
+        <div className="listaFilmes flex flex-row gap-3 overflow-x-scroll hide-scroll-bar relative"> 
+        <div className="listaFilmes flex flex-row flex-wrap  pt-5  "></div>
+            {
+                filmes.map(
+                    filme => (
+                        <div className="card-filme" key={filme.id}>
+                          
+                            <div className="inline-block pl-5 pb-5">
+                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <h1 className="relative font-bold text-center text-white text-sm pt-64 p-5 ">{filme.title}</h1>
+                        
+                      </div>
+                      <div className="text-sm pl-20 pt-3">
+                            <Link to={`${filme.id}`} className="bg-white pr-2 pl-2 pt-1 pb-1 rounded-xl ">Saiba Mais</Link>
+                            </div>
                   </div>
-                  <div>
-                 <p className='text-white font-extrabold text-3xl pt-10 pl-7'>Comédia</p>
+                        </div>
+            
+                    )
+                )
+            }
+           
+        </div>
+          
+        <p className='text-white font-extrabold text-3xl pt-5 pl-8 p-3'>Ficção Científica</p>
+        <div className="listaFilmes flex flex-row gap-3 overflow-x-scroll hide-scroll-bar relative"> 
+        <div className="listaFilmes flex flex-row flex-wrap  pt-5  "></div>
+            {
+                filmes.map(
+                    filme => (
+                        <div className="card-filme" key={filme.id}>
+                          
+                            <div className="inline-block pl-5 pb-5">
+                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <h1 className="relative font-bold text-center text-white text-sm pt-64 p-5 ">{filme.title}</h1>
+                        
+                      </div>
+                      <div className="text-sm pl-20 pt-3">
+                            <Link to={`${filme.id}`} className="bg-white pr-2 pl-2 pt-1 pb-1 rounded-xl ">Saiba Mais</Link>
+                            </div>
+                  </div>
+                        </div>
+            
+                    )
+                )
+            }
+           
+        </div>
+        <p className='text-white font-extrabold text-3xl pl-8 p-3 pt-5'>Comédia</p>
+        <div className="listaFilmes flex flex-row gap-3 overflow-x-scroll hide-scroll-bar relative"> 
+        <div className="listaFilmes flex flex-row flex-wrap  pt-5  "></div>
+            {
+                filmes.map(
+                    filme => (
+                        <div className="card-filme" key={filme.id}>
+                          
+                            <div className="inline-block pl-5 pb-5">
+                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <h1 className="relative font-bold text-center text-white text-sm pt-64 p-5 ">{filme.title}</h1>
+                        
+                      </div>
+                      <div className="text-sm pl-20 pt-3">
+                            <Link to={`${filme.id}`} className="bg-white pr-2 pl-2 pt-1 pb-1 rounded-xl ">Saiba Mais</Link>
+                            </div>
+                  </div>
+                        </div>
+            
+                    )
+                )
+            }
+           
+        </div>
+      
                  
-                 <div className="listaFilmes flex flex-row overflow-x-scroll pt-5 hide-scroll-bar relative ">
-                 {
-                  filmes.map(filme => (
-                      <>
-                      <main>
-                  <div className="inline-block pl-5 pb-5">
-                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
-                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
-                      </div>
-                  </div>
-                  </main>
-                      </>
-                      
-                          )
-                      )
-                  }
-                  
-                  </div>
-                  
-                  <p className='text-white font-extrabold text-3xl pl-7 pt-10 '>Ficção científica</p>
                  
-                 <div className="listaFilmes flex flex-row overflow-x-scroll pt-5 hide-scroll-bar relative ">
-                 {
-                  filmes.map(filme => (
-                      <>
-                      <main>
-                  <div className="inline-block pl-5 pb-5">
-                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
-                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
-                      </div>
-                  </div>
-                  </main>
-                      </>
-                      
-                          )
-                      )
-                  }
-                  
-                  </div>
-                  
-                  <div>
-  
-                 <p className='text-white font-extrabold text-3xl pt-10 pl-7 pt-10 '>Drama</p>
-                 <div className="listaFilmes flex flex-row overflow-x-scroll   pt-5 hide-scroll-bar relative ">
-                 {
-                  filmes.map(filme => (
-                      <>
-                      <main>
-                  <div className="inline-block pl-5 pb-5">
-                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
-                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
-                      </div>
-                  </div>
-                  </main>
-                      </>
-                      
-                          )
-                      )
-                  }
-                  
-                  </div>
-                  
-                  </div>
-          </div> 
+                 
+
+                
+             
           </main>
-          <footer
-  className="flex flex-col items-center text-center   bg-stone-900">
+          <footer className="flex flex-col items-center text-center bg-stone-900">
 
     <div className="mb-6 pt-5">
     <span className=" font-bold text-transparent text-2xl bg-clip-text bg-gradient-to-r from-rose-300 to-teal-200">HiMovie</span>
-      <p className="text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-        distinctio earum repellat quaerat voluptatibus placeat nam.</p>
-        <p className="text-white">
-        commodi optio pariatur est quia magnam eum harum corrupti dicta,
-        aliquam sequi voluptate quas.
-      </p>
+    <div className="text-white pt-3 text-xs">
+      <p>
+      Lorem ipsum dolor sit amet consectetur. Id in orci euismod est faucibus et orci eu purus.</p>
+      <p>Faucibus pellentesque aliquam nunc sed aliquet. Lacus rhoncus in dis nisl et a egestas adipiscing ipsum.</p>
+      </div>
+        
+    </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 text-white font-semibold text-sm">
+        <a href=""><h5>HOME</h5></a>
+        <a href=""><h5>FILMES</h5></a>
+        <a href=""><h5>FAVORITOS</h5></a>
+        <a href=""><h5>BLOG</h5></a>
     </div>
 
-  <div className="container px-6 pt-6">
+  <div className="container px-6 pt-8 ">
     
     <div className="flex justify-center space-x-2 ">
+    <span className="pt-2 text-white font-semibold pr-2">Nos siga</span>
       <a
         href="#!"
         type="button"
@@ -207,117 +227,16 @@ function Filmes() {
     </div>
 
     
-    <div>
-
-        
-
-          
-          <div className="relative md:mb-6" data-twe-input-wrapper-init>
-            <input
-              type="email"
-              className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
-              id="exampleFormControlInputEmail"
-              placeholder="Email address" />
-            <label
-              htmlFor="exampleFormControlInputEmail"
-              className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
-              >
-            </label>
-          </div>
-         
-          
-        </div>
-
-
-
+  
     
-
-   
-    <div className="grid md:grid-cols-2 lg:grid-cols-4">
-      <div className="mb-6">
-        <h5 className="mb-2.5 font-bold uppercase">Links</h5>
-
-        <ul className="mb-0 list-none">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h5 className="mb-2.5 font-bold uppercase">Links</h5>
-
-        <ul className="mb-0 list-none">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h5 className="mb-2.5 font-bold uppercase">Links</h5>
-
-        <ul className="mb-0 list-none">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h5 className="mb-2.5 font-bold uppercase">Links</h5>
-
-        <ul className="mb-0 list-none">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
 
   
   <div className="w-full bg-black/5 p-4 text-center">
-    © 2023 Copyright:
-    <a className="font-semibold" href="https://tw-elements.com/"
-      >TW Elements</a
-    >
+    <p className="text-white font-semibold text-xs">2024 HIMOVIE</p>
+    <div className="text-stone-600 text-xs">
+    <p>Texto genérico de rodapé com muitas informações importantes e técnicas que eu não</p> <p>faço ideia do que significam e pra que servem, mas tem em todo site então provavelmente</p><p> tinha que ter aqui também.</p>
+    </div>
   </div>
 </footer>
         </>

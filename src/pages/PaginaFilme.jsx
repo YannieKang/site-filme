@@ -22,9 +22,16 @@ function PaginaFilmes(){
 
     return( 
         <>
-        <img src={`${urlImg}${filmes.backdrop_path}`}/>
-        <h1> {filmes.title}</h1>
-        <p>{filmes.overview}</p>
+        <main className='bg-stone-700'>
+        <input type="text" name="buscar" id="busca" className="bg-stone-700 w-full h-11 p-5 text-stone-400 text-base italic" placeholder="Pesquisar por um filme, uma série televisiva"/>
+    
+        <img  src={`${urlImg}${filmes.backdrop_path}`}/>
+        
+        <h1 className="text-white text-lg pt-5 pl-5"> {filmes.title}</h1>
+        <p className="text-white text-sm pt-3 pl-5">{filmes.overview}</p>
+
+        
+        </main>
         </>
 
     );
