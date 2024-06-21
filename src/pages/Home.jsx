@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 
 
 
+
+
 function Home() {
+  
   console.log(data)
   const [filmes, setFilmes] = useState([])
 
@@ -20,7 +23,7 @@ function Home() {
 
     },[])
     return(
-
+      
       
       <>
         <main className='bg-stone-700'>
@@ -33,22 +36,77 @@ function Home() {
                </div>
                </div>
 
-               <p className='text-white font-extrabold text-3xl pt-10 pl-8'>Mais Populares</p>
-               <div className="listaFilmes flex flex-row overflow-x-scroll   pt-7 hide-scroll-bar relative ">
+               
+               
+               
+               <p className='text-white font-extrabold text-3xl pt-10 pl-7'>Mais Populares</p>
+               
+               <div className="listaFilmes flex flex-row overflow-x-scroll pt-7 hide-scroll-bar relative ">
                {
                 filmes.map(filme => (
                     <>
-                <div className="inline-block px-3 ">
+                    <main>
+                <div className="inline-block pl-5 pb-10">
                   <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
                     <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                      <h1 className="relative font-bold text-center text-white pt-64 ">{filme.title}</h1>
+                      <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
                     </div>
                 </div>
+                </main>
                     </>
                     
                         )
                     )
                 }
+                
+                </div>
+                <div>
+               <p className='text-white font-extrabold text-3xl pt-10 pl-7'>Ver</p>
+               
+               <div className="listaFilmes flex flex-row overflow-x-scroll pt-7 hide-scroll-bar relative ">
+               {
+                filmes.map(filme => (
+                    <>
+                    <main>
+                <div className="inline-block pl-5 pb-10">
+                  <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                    <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                      <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
+                    </div>
+                </div>
+                </main>
+                    </>
+                    
+                        )
+                    )
+                }
+                
+                </div>
+                <div>
+
+               <p className='text-white font-extrabold text-3xl pt-10 pl-7'>Tendência</p>
+               <div className="listaFilmes flex flex-row overflow-x-scroll   pt-7 hide-scroll-bar relative ">
+               {
+                filmes.map(filme => (
+                    <>
+                    <main>
+                <div className="inline-block pl-5 pb-10">
+                  <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                    <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                      <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
+                    </div>
+                </div>
+                </main>
+                    </>
+                    
+                        )
+                    )
+                }
+                
+                </div>
+                
+                </div>
+                
                 
       
           
