@@ -1,5 +1,6 @@
 import data from '../artigo.json'
 import { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 
 
 
@@ -27,92 +28,85 @@ function Home() {
       
       <>
         <main className='bg-stone-700'>
-          <input type="text" name="buscar" id="busca" className="bg-stone-700 w-full h-11 p-6 text-stone-400 text-base italic" placeholder="Pesquisar por um filme, uma série televisiva"/>
-          <div className='size-full relative '>
-              <img src="cinema.png" alt="#" />
-              <div className='absolute top-20 p-11 text-white font-bold text-3xl'>
-                <p>Bem-vindo a <span className="font-bold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-rose-300 to-teal-200">HiMovie</span></p>
-               <p>Milhões de filmes, séries e pessoas para descobrir. Explora já.</p>
-               </div>
-               </div>
+        <input type="text" name="buscar" id="busca" className="bg-stone-700 w-full h-11 p-5 text-stone-400 text-base italic" placeholder="Pesquisar por um filme, uma série televisiva"/>
 
-               
-               
-               
-               <p className='text-white font-extrabold text-3xl pt-10 pl-7'>Mais Populares</p>
-               
-               <div className="listaFilmes flex flex-row overflow-x-scroll pt-7 hide-scroll-bar relative ">
-               {
-                filmes.map(filme => (
-                    <>
-                    <main>
-                <div className="inline-block pl-5 pb-10">
-                  <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
-                    <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                      <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
-                    </div>
-                </div>
-                </main>
-                    </>
-                    
-                        )
+        <p className='text-white font-extrabold text-3xl pl-8 p-3'>Mais Populares</p>
+        <div className="listaFilmes flex flex-row gap-3 overflow-x-scroll hide-scroll-bar relative"> 
+        
+            {
+                filmes.map(
+                    filme => (
+                        <div className="card-filme" key={filme.id}>
+                          
+                            <div className="inline-block pl-5 pb-5">
+                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <h1 className="relative font-bold text-center text-white text-sm pt-64 p-5 ">{filme.title}</h1>
+                        
+                      </div>
+                      <div className="text-sm pl-20 pt-3">
+                            <Link to={`${filme.id}`} className="bg-white pr-2 pl-2 pt-1 pb-1 rounded-xl ">Saiba Mais</Link>
+                            </div>
+                  </div>
+                        </div>
+            
                     )
-                }
-                
-                </div>
-                <div>
-               <p className='text-white font-extrabold text-3xl pt-10 pl-7'>Ver Gratuitamente</p>
-               
-               <div className="listaFilmes flex flex-row overflow-x-scroll pt-7 hide-scroll-bar relative ">
-               {
-                filmes.map(filme => (
-                    <>
-                    <main>
-                <div className="inline-block pl-5 pb-10">
-                  <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
-                    <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                      <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
-                    </div>
-                </div>
-                </main>
-                    </>
-                    
-                        )
-                    )
-                }
-                
-                </div>
-                <div>
+                )
+            }
+           
+        </div>
 
-               <p className='text-white font-extrabold text-3xl pt-10 pl-7'>Tendência</p>
-               <div className="listaFilmes flex flex-row overflow-x-scroll   pt-7 hide-scroll-bar relative ">
-               {
-                filmes.map(filme => (
-                    <>
-                    <main>
-                <div className="inline-block pl-5 pb-10">
-                  <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
-                    <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                      <h1 className="relative font-bold text-center text-white pt-64 p-5 ">{filme.title}</h1>
-                    </div>
-                </div>
-                </main>
-
-                
-                    </>
-                    
-                        )
+        <p className='text-white font-extrabold text-3xl pl-8 p-3 pt-5'>Ver Gratuitamente</p>
+        <div className="listaFilmes flex flex-row gap-3 overflow-x-scroll hide-scroll-bar relative"> 
+        <div className="listaFilmes flex flex-row flex-wrap  pt-5  "></div>
+            {
+                filmes.map(
+                    filme => (
+                        <div className="card-filme" key={filme.id}>
+                          
+                            <div className="inline-block pl-5 pb-5">
+                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <h1 className="relative font-bold text-center text-white text-sm pt-64 p-5 ">{filme.title}</h1>
+                        
+                      </div>
+                      <div className="text-sm pl-20 pt-3">
+                            <Link to={`${filme.id}`} className="bg-white pr-2 pl-2 pt-1 pb-1 rounded-xl ">Saiba Mais</Link>
+                            </div>
+                  </div>
+                        </div>
+            
                     )
-                }
-                
-                </div>
-                
-                </div>
-                
-                
-      
+                )
+            }
+           
+        </div>
           
-        </div>  
+        <p className='text-white font-extrabold text-3xl pt-5 pl-8 p-3'>Tendências</p>
+        <div className="listaFilmes flex flex-row gap-3 overflow-x-scroll hide-scroll-bar relative"> 
+        <div className="listaFilmes flex flex-row flex-wrap  pt-5  "></div>
+            {
+                filmes.map(
+                    filme => (
+                        <div className="card-filme" key={filme.id}>
+                          
+                            <div className="inline-block pl-5 pb-5">
+                    <img className='absolute w-1/6 h-64 pl-5  pt-5' src={`${urlImg}${filme.poster_path}`} alt="" />
+                      <div className="w-56 h-80 max-w-xs overflow-hidden rounded-lg shadow-md bg-stone-900 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <h1 className="relative font-bold text-center text-white text-sm pt-64 p-5 ">{filme.title}</h1>
+                        
+                      </div>
+                      <div className="text-sm pl-20 pt-3">
+                            <Link to={`${filme.id}`} className="bg-white pr-2 pl-2 pt-1 pb-1 rounded-xl ">Saiba Mais</Link>
+                            </div>
+                  </div>
+                        </div>
+            
+                    )
+                )
+            }
+           
+        </div> 
         
         </main>
         <footer className="flex flex-col items-center text-center bg-stone-900">

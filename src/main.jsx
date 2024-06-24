@@ -5,7 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Filmes from './pages/Filmes.jsx'
 import Sobre from './pages/favoritos.jsx'
-import Contato from './pages/Contato.jsx'
+import Blog from './pages/Blog.jsx'
 import PageNotFound from './pages/PageNotFound.jsx'
 import Home from './pages/Home.jsx'
 import PaginaFilmes from './pages/PaginaFilme.jsx'
@@ -21,7 +21,7 @@ const router = createBrowserRouter(
         {path: "filmes", element: <Filmes/>},
         {path: 'filmes/:id', element: <PaginaFilmes/>},
         {path: "sobre", element: <Sobre/>},
-        {path: "contato", element: <Contato/>},
+        {path: "contato", element: <Blog/>},
         {path: "*", element: <PageNotFound/>}
       ]
     }
@@ -33,3 +33,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 )
+

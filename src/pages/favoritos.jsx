@@ -1,6 +1,6 @@
 function Favoritos() {
     return ( 
-        <h1>Sobre</h1>
+        <h1>Sobr</h1>
      );
 }
 
